@@ -16,6 +16,8 @@ public class SubscriberPassengers extends Passenger {
         }
 
         super.setReserved_car(car);
+        car.setMax_capacity(car.getMax_capacity() - 1);
+
         super.setTrip_cost(car.getRoute().getTrip_price() * 0.5);  //Take 50% discount on trip cost
 
     } //End reserveCar method

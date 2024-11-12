@@ -18,7 +18,10 @@ public class NonSubscriberPassengers extends Passenger {
             throw new Exception("All sets are full in this car..it has reached to maximum capacity.");
         }
 
-        super.setReserved_car(car);  //reserve car object to the passenger
+        super.setReserved_car(car); 
+         car.setMax_capacity(car.getMax_capacity() - 1);
+        
+        //reserve car object to the passenger
         if (discount_coupon) {
 
             super.setTrip_cost(car.getRoute().getTrip_price() - car.getRoute().getTrip_price() * 0.1);
